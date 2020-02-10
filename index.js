@@ -20,12 +20,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 //set route
-const { movieRouter, categoriesRouter } = require("./routers");
+const { movieRouter, categoriesRouter, movCatRouter } = require("./routers");
 app.get("/", (req, res) => {
-  res.send("<center><h1>ini homepage </h1></center>");
+  res.send("<center><h1>Ini Home Page </h1></center>");
 });
 app.use("/movie", movieRouter);
 app.use("/category", categoriesRouter);
+app.use("/movcat", movCatRouter);
+
 
 //set port
 const PORT = process.env.PORT || 7000;
